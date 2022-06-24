@@ -1,17 +1,42 @@
-<form class="d-flex flex-column">
-    <div>
-        <label class="form-label" for="num1">Número 1: </label>
-        <input #a id="num1" class="form-control" type="number" name="num1" />
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Projeto Calculadora
+            </a>
+        </div>
     </div>
-    <div>
-        <label class="form-label" for="num2">Número 2: </label>
-        <input #b id="num2" class="form-control" type="number" name="num2" />
-    </div>
-    <div>
-        <input class="btn btn-primary espaca-topo" type="button" value="somar" (click)="somar(a.value, b.value)"/>
-    </div>
-    <div>
-        <label class="form-label" for="resultado">Resultado: </label>
-        <input id="resultado" class="form-control" type="text" [value]="resultado" readonly/>
-    </div>
-</form>
+</nav>
+
+<div class="col-md-6 col-md-offset-6">
+    <form>
+        <form class="d-flex flex-column">
+            <div class="form-group row">
+                <div>
+                    <label class="col-sm-2 col-form-label" for="num1">Número 1: </label>
+                    <div class="col-sm-4">
+                        <input #a id="num1" class="form-control" type="number" name="num1" />
+                    </div>
+                </div>
+                <div>
+                    <label class="col-sm-2 col-form-label" for="num2">Número 2: </label>
+                    <div class="col-sm-4">
+                        <input #b id="num2" class="form-control" type="number" name="num2" />
+                    </div>
+                </div>
+                <div>
+                    <input class="btn btn-primary margins" type="button" value="Somar" (click)="operar(a.value, b.value, '+')"/>
+                    <input class="btn btn-primary margins" type="button" value="Subtrair" (click)="operar(a.value, b.value, '-')"/>
+                    <input class="btn btn-primary margins" type="button" value="Dividir" (click)="operar(a.value, b.value, '/')"/>
+                    <input class="btn btn-primary margins" type="button" value="Multiplicar" (click)="operar(a.value, b.value, '*')"/>
+                </div>
+                <div>
+                    <label class="col-sm-2 col-form-label" for="resultado">Resultado: </label>
+                    <div class="col-sm-4">
+                        <input id="resultado" class="form-control" type="text" [value]="resultado" readonly/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </form>
+</div>
