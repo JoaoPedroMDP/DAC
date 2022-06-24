@@ -1,1 +1,17 @@
-<p>soma works!</p>
+<form class="d-flex flex-column">
+    <div>
+        <label class="form-label" for="num1">Número 1: </label>
+        <input #a id="num1" class="form-control" type="number" name="num1" />
+    </div>
+    <div>
+        <label class="form-label" for="num2">Número 2: </label>
+        <input #b id="num2" class="form-control" type="number" name="num2" />
+    </div>
+    <div>
+        <input class="btn btn-primary espaca-topo" type="button" value="somar" (click)="somar(a.value, b.value)"/>
+    </div>
+    <div>
+        <label class="form-label" for="resultado">Resultado: </label>
+        <input id="resultado" class="form-control" type="text" [value]="resultado" readonly/>
+    </div>
+</form>
