@@ -1,2 +1,4 @@
 docker-compose.yml
 docker/front*
+.angular
+**/*node_modules
