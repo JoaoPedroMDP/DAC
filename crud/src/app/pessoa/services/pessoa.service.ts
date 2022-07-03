@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CRUDService } from 'src/app/shared/interfaces/crud-service.interface';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
 
 // Chave do local storage
@@ -7,7 +8,7 @@ const LS_CHAVE: string = "pessoas";
 @Injectable({
   providedIn: 'root'
 })
-export class PessoaService {
+export class PessoaService implements CRUDService{
 
   constructor() { }
 
@@ -18,7 +19,6 @@ export class PessoaService {
 
   inserir(pessoa: Pessoa): void{
     const pessoas: Pessoa[] = this.listarTodos();
-    console.log(pessoa);
     pessoa.id = new Date().getTime();
     pessoas.push(pessoa);
     localStorage[LS_CHAVE] = JSON.stringify(pessoas);

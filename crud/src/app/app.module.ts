@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { PessoaService } from './pessoa/services/pessoa.service';
 import { FormsModule } from '@angular/forms';
+import { EnderecoModule } from './endereco/endereco.module';
+import { CidadeModule } from './cidade/cidade.module';
+import { EnderecoService } from './endereco/services/endereco.service';
+import { CidadeService } from './cidade/services/cidade.service';
+import { EstadoModule } from './estado/estado.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +19,12 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     PessoaModule,
+    EnderecoModule,
+    CidadeModule,
+    EstadoModule,
     FormsModule
   ],
-  providers: [PessoaService],
+  providers: [PessoaService, EnderecoService, CidadeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

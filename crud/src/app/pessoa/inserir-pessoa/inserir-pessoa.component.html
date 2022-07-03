@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="idade">Data de nascimento: </label>
-            <input [(ngModel)]="pessoa.dataNasc" #dataNasc="ngModel" type="text" id="idade" class="form-control" name="idade" required>
+            <label for="dataNasc">Data de nascimento: </label>
+            <input [(ngModel)]="pessoa.dataNasc" #dataNasc="ngModel" type="text" id="dataNasc" class="form-control" name="dataNasc" required>
             <div *ngIf="dataNasc.errors && (dataNasc.dirty || dataNasc.touched)" class="alert alert-danger">
                 <div *ngIf="dataNasc.errors?.['required']" >Digite a data de nascimento da pessoa</div>
             </div>
@@ -28,7 +28,7 @@
             <button type="button" class="btn btn-primary" (click)="inserir()" [disabled]="!formPessoa.form.valid">
                 <i class="fa fa-save" aria-hidden="true"></i> Salvar
             </button>
-            <a [routerLink]="['/pessoas']" class="btn btn-secondary">
+            <a [routerLink]="['/pessoas/listar']" class="btn btn-secondary">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
             </a>
         </div>

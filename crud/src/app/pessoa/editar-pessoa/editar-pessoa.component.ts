@@ -29,7 +29,7 @@ export class EditarPessoaComponent implements OnInit {
   atualizar(): void {
     if(this.formPessoa.form.valid){
       this.pessoaService.atualizar(this.pessoa);
-      this.router.navigate(['/pessoas']);
+      this.router.navigate(['/pessoas/listar']);
     }
   }
 }

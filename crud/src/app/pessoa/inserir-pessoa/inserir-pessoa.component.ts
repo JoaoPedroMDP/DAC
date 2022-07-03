@@ -22,7 +22,7 @@ export class InserirPessoaComponent implements OnInit {
   inserir(): void{
     if(this.formPessoa.form.valid) {
       this.pessoaService.inserir(this.pessoa);
-      this.router.navigate(["/pessoas"]);
+      this.router.navigate(["/pessoas/listar"]);
     }
   }
 }

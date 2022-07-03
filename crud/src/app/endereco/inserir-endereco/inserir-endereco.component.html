@@ -1,0 +1,65 @@
+<h1>Novo endereço</h1>
+
+<div class="well">
+    <form #formEndereco="ngForm">
+        <div class="form-group">
+            <label for="rua">Rua: </label>
+            <input  [(ngModel)]="endereco.rua" #rua="ngModel" type="text" id="rua" class="form-control" name="rua" minlength="2" required>
+            <div *ngIf="rua.errors && (rua.dirty || rua.touched)" class="alert alert-danger">
+                <div *ngIf="rua.errors?.['required']">Digite a rua</div>
+                <div *ngIf="rua.errors?.['minlength']">Rua deve conter ao menos 2 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="numero">Número: </label>
+            <input  [(ngModel)]="endereco.numero" #numero="ngModel" type="text" id="numero" class="form-control" name="numero" required>
+            <div *ngIf="numero.errors && (numero.dirty || numero.touched)" class="alert alert-danger">
+                <div *ngIf="numero.errors?.['required']">Digite o numero</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento: </label>
+            <input  [(ngModel)]="endereco.complemento" #complemento="ngModel" type="text" id="complemento" class="form-control" name="complemento">
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro: </label>
+            <input  [(ngModel)]="endereco.bairro" #bairro="ngModel" type="text" id="bairro" class="form-control" name="bairro" minlength="2" required>
+            <div *ngIf="bairro.errors && (bairro.dirty || bairro.touched)" class="alert alert-danger">
+                <div *ngIf="bairro.errors?.['required']">Digite o bairro</div>
+                <div *ngIf="bairro.errors?.['minlength']">Bairro deve conter mais que 2 letras</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP: </label>
+            <input  [(ngModel)]="endereco.cep" #cep="ngModel" type="text" id="cep" class="form-control" name="cep" minlength="8" maxlength="8" required>
+            <div *ngIf="cep.errors && (cep.dirty || cep.touched)" class="alert alert-danger">
+                <div *ngIf="cep.errors?.['required']">Digite o cep</div>
+                <div *ngIf="cep.errors?.['minlength']">CEP deve conter 8 dígitos</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade: </label>
+            <input  [(ngModel)]="endereco.cidade" #cidade="ngModel" type="text" id="cidade" class="form-control" name="cidade" minlength="3" required>
+            <div *ngIf="cidade.errors && (cidade.dirty || cidade.touched)" class="alert alert-danger">
+                <div *ngIf="cidade.errors?.['required']">Digite a cidade</div>
+                <div *ngIf="cidade.errors?.['minlength']">Cidade deve conter mais que 3 letras</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado: </label>
+            <input  [(ngModel)]="endereco.estado" #estado="ngModel" type="text" id="estado" class="form-control" name="estado" minlength="3" required>
+            <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
+                <div *ngIf="estado.errors?.['required']">Digite o estado</div>
+                <div *ngIf="estado.errors?.['minlength']">Estado deve conter mais que 3 letras</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="inserir()" [disabled]="!formEndereco.form.valid">
+                <i class="fa fa-save" aria-hidden="true"></i> Salvar
+            </button>
+            <a [routerLink]="['/enderecos/listar']" class="btn btn-secondary">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+            </a>
+        </div>
+    </form>
+</div>

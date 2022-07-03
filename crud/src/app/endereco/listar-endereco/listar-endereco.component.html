@@ -1,0 +1,39 @@
+<h1>Endereços</h1>
+
+<table class="table table-stripped table-bordered table-hover">
+    <tbody>
+        <tr>
+            <th>Rua</th>
+            <th>Numero</th>
+            <th>Complemento</th>
+            <th>Bairro</th>
+            <th>CEP</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+
+            <th class="text-center">
+                <a [routerLink]="['/enderecos/novo']" href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success">
+                    <i class="fa fa-plus" aria-hidden=""true></i> Novo
+                </a>
+            </th>
+        </tr>
+        <tr *ngFor="let endereco of enderecos">
+            <td>{{endereco.rua}}</td>
+            <td>{{endereco.numero}}</td>
+            <td>{{endereco.complemento}}</td>
+            <td>{{endereco.bairro}}</td>
+            <td>{{endereco.cep}}</td>
+            <td>{{endereco.cidade}}</td>
+            <td>{{endereco.estado}}</td>
+            <td class="text-center" style="width: 300px">
+                <a [routerLink]="['/enderecos/editar/', endereco.id]" href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+                    <i class="fa fa-edit" aria-hidden="true"></i> Editar
+                </a>
+                <a (click)="remover($event, endereco)" href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+                    <i class="fa fa-times" aria-hidden="true"></i> Remover
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <p *ngIf="enderecos.length == 0">Nenhum endereco cadastrado!</p>
+</table>
