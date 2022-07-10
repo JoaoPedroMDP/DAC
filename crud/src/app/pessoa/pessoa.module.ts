@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { SharedModule } from '../shared';
+import { ModalPessoaComponent } from './modal-pessoa/modal-pessoa.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -15,7 +16,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
   declarations: [
     InserirPessoaComponent,
     EditarPessoaComponent,
-    ListarPessoaComponent
+    ListarPessoaComponent,
+    ModalPessoaComponent
   ],
   imports: [
     CommonModule,

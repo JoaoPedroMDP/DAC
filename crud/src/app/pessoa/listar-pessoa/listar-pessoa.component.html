@@ -13,10 +13,14 @@
             </th>
         </tr>
         <tr *ngFor="let pessoa of pessoas">
-            <td>{{pessoa.nome | meupipe}}</td>
+            <td>{{pessoa.nome}}</td>
+            <!-- <td>{{pessoa.nome | meupipe}}</td> -->
             <td>{{pessoa.idade}}</td>
             <td>{{pessoa.dataNasc! | mask: "d0/M0/0000"}}</td>
             <td class="text-center" style="width: 300px">
+                <button type="button" class="btn btn-xs btn-success" (click)="abrirModal(pessoa)" >
+                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </button>
                 <a [routerLink]="['/pessoas/editar/', pessoa.id]" href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
                     <i class="fa fa-edit" aria-hidden="true"></i> Editar
                 </a>

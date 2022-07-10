@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { PessoaService } from './pessoa/services/pessoa.service';
-import { FormsModule } from '@angular/forms';
 import { EnderecoModule } from './endereco/endereco.module';
 import { CidadeModule } from './cidade/cidade.module';
 import { EnderecoService } from './endereco/services/endereco.service';
@@ -25,7 +26,8 @@ import { SharedModule } from './shared';
     CidadeModule,
     EstadoModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   providers: [PessoaService, EnderecoService, CidadeService],
   bootstrap: [AppComponent]
