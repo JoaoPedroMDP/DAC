@@ -11,6 +11,8 @@ import { CidadeModule } from './cidade/cidade.module';
 import { EnderecoService } from './endereco/services/endereco.service';
 import { CidadeService } from './cidade/services/cidade.service';
 import { EstadoModule } from './estado/estado.module';
+import { SharedModule } from './shared';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +24,8 @@ import { EstadoModule } from './estado/estado.module';
     EnderecoModule,
     CidadeModule,
     EstadoModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [PessoaService, EnderecoService, CidadeService],
   bootstrap: [AppComponent]

@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NumericoDirective } from './directives/numerico.directive';
-import { MinimoValidatorDirective } from './directives/minimo-validator.directive';
-import { MeupipePipe } from './pipes/meupipe.pipe';
-
+import { NgModule } from '@angular/core';
+import { MinimoValidatorDirective, NumericoDirective } from './directives';
+import { MeupipePipe } from './pipes';
 
 
 @NgModule({
@@ -14,6 +12,11 @@ import { MeupipePipe } from './pipes/meupipe.pipe';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    NumericoDirective,
+    MinimoValidatorDirective,
+    MeupipePipe
   ]
 })
 export class SharedModule { }
