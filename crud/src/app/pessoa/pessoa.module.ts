@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NumericoDirective } from '../shared/directives/numerico.directive';
 import { MinimoValidatorDirective } from '../shared/directives/minimo-validator.directive';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { MeupipePipe } from '../shared/pipes/meupipe.pipe';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -18,7 +19,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     EditarPessoaComponent,
     ListarPessoaComponent,
     NumericoDirective,
-    MinimoValidatorDirective
+    MinimoValidatorDirective,
+    MeupipePipe
   ],
   imports: [
     CommonModule,
