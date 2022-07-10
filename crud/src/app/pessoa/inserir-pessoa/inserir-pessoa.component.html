@@ -12,16 +12,17 @@
         </div>
         <div class="form-group">
             <label for="idade">Idade: </label>
-            <input [(ngModel)]="pessoa.idade" #idade="ngModel" type="text" id="idade" class="form-control" name="idade" required>
+            <input [(ngModel)]="pessoa.idade" numerico minimo #idade="ngModel" type="text" id="idade" class="form-control" name="idade" required>
             <div *ngIf="idade.errors && (idade.dirty || idade.touched)" class="alert alert-danger">
-                <div *ngIf="idade.errors?.['required']" >Digite a idade da pessoa</div>
+                <div *ngIf="idade.errors?.['required']">Digite a idade da pessoa</div>
+                <div *ngIf="idade.errors?.['minimo']">Idade mínima: 18</div>
             </div>
         </div>
         <div class="form-group">
             <label for="dataNasc">Data de nascimento: </label>
-            <input [(ngModel)]="pessoa.dataNasc" #dataNasc="ngModel" type="text" id="dataNasc" class="form-control" name="dataNasc" required>
+            <input [(ngModel)]="pessoa.dataNasc" mask="d0/M0/0000" #dataNasc="ngModel" type="text" id="dataNasc" class="form-control" name="dataNasc" required>
             <div *ngIf="dataNasc.errors && (dataNasc.dirty || dataNasc.touched)" class="alert alert-danger">
-                <div *ngIf="dataNasc.errors?.['required']" >Digite a data de nascimento da pessoa</div>
+                <div *ngIf="dataNasc.errors?.['required']">Digite a data de nascimento da pessoa</div>
             </div>
         </div>
         <div class="form-group">

@@ -6,17 +6,26 @@ import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
 import { PessoaService } from './services/pessoa.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NumericoDirective } from '../shared/directives/numerico.directive';
+import { MinimoValidatorDirective } from '../shared/directives/minimo-validator.directive';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
     InserirPessoaComponent,
     EditarPessoaComponent,
-    ListarPessoaComponent
+    ListarPessoaComponent,
+    NumericoDirective,
+    MinimoValidatorDirective
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     PessoaService
