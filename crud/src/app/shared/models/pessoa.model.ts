@@ -5,6 +5,7 @@ export class Pessoa implements CRUDObject{
         public id?: number,
         public nome?: string,
         public idade?: number,
-        public dataNasc?: string
+        public dataNasc?: string,
+        public motorista?: string
     ){}
 }

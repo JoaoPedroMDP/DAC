@@ -54,6 +54,10 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="residencial">Residencial: </label>
+            <input  [(ngModel)]="endereco.residencial" #residencial="ngModel" type="checkbox" id="residencial" class="form-check-input" name="residencial">
+        </div>
+        <div class="form-group">
             <button type="button" class="btn btn-primary" (click)="inserir()" [disabled]="!formEndereco.form.valid">
                 <i class="fa fa-save" aria-hidden="true"></i> Salvar
             </button>

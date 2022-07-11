@@ -10,7 +10,7 @@ import { PessoaService } from '../services/pessoa.service';
   styleUrls: ['./inserir-pessoa.component.css']
 })
 export class InserirPessoaComponent implements OnInit {
-  @ViewChild('formPessoa') formPessoa!:NgForm
+  @ViewChild('formPessoa') formPessoa!: NgForm;
   pessoa!: Pessoa;
 
   constructor(private pessoaService: PessoaService, private router: Router) { }

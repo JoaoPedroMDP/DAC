@@ -9,6 +9,7 @@ export class Endereco implements CRUDObject{
       public bairro?: string,
       public cep?: string,
       public cidade?: string,
-      public estado?: string
+      public estado?: string,
+      public residencial?: string
     ){}
 }

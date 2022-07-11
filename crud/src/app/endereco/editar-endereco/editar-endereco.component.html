@@ -1,7 +1,7 @@
 <h1>Editar endereço</h1>
 
 <div class="well">
-    <form #enderecoForm="ngForm">
+    <form #formEndereco="ngForm">
         <div class="form-group">
             <label for="nome">Rua: </label>
             <input  [(ngModel)]="endereco.rua" #rua="ngModel" type="text" id="rua" class="form-control" name="rua" minlength="2" required>
@@ -52,6 +52,10 @@
                 <div *ngIf="estado.errors?.['required']">Digite o estado</div>
                 <div *ngIf="estado.errors?.['minLength']">Estado deve conter mais que 3 letras</div>
             </div>
+        </div>
+        <div class="form-group">
+            <label for="residencial">Residencial: </label>
+            <input  [(ngModel)]="endereco.residencial" #residencial="ngModel" type="checkbox" id="residencial" name="residencial" class="form-check-input">
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-primary" (click)="atualizar()" [disabled]="!formEndereco.form.valid">

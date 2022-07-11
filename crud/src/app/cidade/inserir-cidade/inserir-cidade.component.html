@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="estado">Estado: </label>
-            <input [(ngModel)]="cidade.estado" #estado="ngModel" type="text" id="estado" class="form-control" name="estado" required>
+            <ng-select #estado="ngModel" name="estado" [items]="estados" bindLabel="sigla" [(ngModel)]="cidade.estado" placeholder="Selecione um estado"></ng-select>
             <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
                 <div *ngIf="estado.errors?.['required']" >Digite a estado da cidade</div>
             </div>

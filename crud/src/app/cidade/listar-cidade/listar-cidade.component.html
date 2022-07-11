@@ -13,8 +13,11 @@
         </tr>
         <tr *ngFor="let cidade of cidades">
             <td>{{cidade.nome}}</td>
-            <td>{{cidade.estado}}</td>
+            <td>{{cidade?.estado?.sigla}}</td>
             <td class="text-center" style="width: 300px">
+                <button href="#" title="Ver" alt="Ver" class="btn btn-xs btn-success" (click)="abrirModal(cidade)">
+                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </button>
                 <a [routerLink]="['/cidades/editar/', cidade.id]" href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
                     <i class="fa fa-edit" aria-hidden="true"></i> Editar
                 </a>

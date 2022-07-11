@@ -25,6 +25,22 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="motorista">Cart. Motorista: </label>
+            <div>
+                <label for="motoristaNao">Não</label>
+                <input [(ngModel)]="pessoa.motorista" #motoristaNao="ngModel" id="motoristaNao" type="radio" name="motorista" value="Não" class="form-check-input">
+                
+                <label for="motoristaA">A</label>
+                <input [(ngModel)]="pessoa.motorista" #motoristaA="ngModel" id="motoristaA" type="radio" name="motorista" value="A" class="form-check-input">
+
+                <label for="motoristaB">B</label>
+                <input [(ngModel)]="pessoa.motorista" #motoristaB="ngModel" id="motoristaB" type="radio" name="motorista" value="B" class="form-check-input">
+
+                <label for="motoristaAB">AB</label>
+                <input [(ngModel)]="pessoa.motorista" #motoristaAB="ngModel" id="motoristaAB" type="radio" name="motorista" value="AB" class="form-check-input">
+            </div>
+        </div>
+        <div class="form-group">
             <button type="button" class="btn btn-primary" (click)="atualizar()" [disabled]="!formPessoa.form.valid">
                 <i class="fa fa-save" aria-hidden="true"></i> Atualizar
             </button>
