@@ -14,6 +14,7 @@ import { EnderecoService } from './endereco/services/endereco.service';
 import { CidadeService } from './cidade/services/cidade.service';
 import { EstadoModule } from './estado/estado.module';
 import { SharedModule } from './shared';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SharedModule } from './shared';
     EstadoModule,
     FormsModule,
     SharedModule,
+    AuthModule,
     NgbModule,
     NgSelectModule
   ],
