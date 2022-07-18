@@ -15,10 +15,12 @@ import { CidadeService } from './cidade/services/cidade.service';
 import { EstadoModule } from './estado/estado.module';
 import { SharedModule } from './shared';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

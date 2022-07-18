@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
     if(this.formLogin.form.valid){
       this.loginService.login(this.login).subscribe(usu => {
-        if( usu != null){
+        if(usu != null){
           this.loginService.usuarioLogado = usu;
           this.loading = false;
           this.router.navigate(["/pessoas"]);

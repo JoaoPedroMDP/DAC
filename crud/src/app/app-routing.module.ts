@@ -12,29 +12,91 @@ import { InserirCidadeComponent } from './cidade/inserir-cidade/inserir-cidade.c
 import { ListarEstadoComponent } from './estado/listar-estado/listar-estado.component';
 import { EditarEstadoComponent } from './estado/editar-estado/editar-estado.component';
 import { InserirEstadoComponent } from './estado/inserir-estado/inserir-estado.component';
+import { LoginRoutes } from './auth/auth-routing.module';
+import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'pessoas/listar', pathMatch: 'full'},
-  {path: 'pessoas', children: [
-    {path: 'listar', component: ListarPessoaComponent },
-    {path: 'editar/:id', component: EditarPessoaComponent },
-    {path: 'novo', component: InserirPessoaComponent },
-  ]},
-  {path: 'enderecos', children: [
-    {path: 'listar', component: ListarEnderecoComponent },
-    {path: 'editar/:id', component: EditarEnderecoComponent },
-    {path: 'novo', component: InserirEnderecoComponent }
-  ]},
-  {path: 'cidades', children: [
-    {path: 'listar', component: ListarCidadeComponent },
-    {path: 'editar/:id', component: EditarCidadeComponent },
-    {path: 'novo', component: InserirCidadeComponent }
-  ]},
-  {path: 'estados', children: [
-    {path: 'listar', component: ListarEstadoComponent },
-    {path: 'editar/:id', component: EditarEstadoComponent },
-    {path: 'novo', component: InserirEstadoComponent }
-  ]},
+  {
+    path: '', redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'pessoas', children: [
+      {
+        path: 'listar', component: ListarPessoaComponent
+      },
+      {
+        path: 'editar/:id', component: EditarPessoaComponent
+      },
+      {
+        path: 'novo', component: InserirPessoaComponent
+      },
+    ],
+    canActivate: [AuthGuard],
+    data: {
+      role: "ADMIN, GERENTE, FUNC"
+    }
+  },
+  {
+    path: 'enderecos', children: [
+      {
+        path: 'listar', component: ListarEnderecoComponent
+      },
+      {
+        path: 'editar/:id', component: EditarEnderecoComponent
+      },
+      {
+        path: 'novo', component: InserirEnderecoComponent
+      }
+    ],
+    canActivate: [AuthGuard],
+    data: {
+      role: "ADMIN, GERENTE"
+    }
+  },
+  {
+    path: 'cidades', children: [
+      {
+        path: 'listar', component: ListarCidadeComponent
+      },
+      {
+        path: 'editar/:id', component: EditarCidadeComponent
+      },
+      {
+        path: 'novo', component: InserirCidadeComponent
+      }
+    ],
+    canActivate: [AuthGuard],
+    data: {
+      role: "GERENTE"
+    }
+  },
+  {
+    path: 'estados', children: [
+      {
+        path: 'listar', component: ListarEstadoComponent
+      },
+      {
+        path: 'editar/:id', component: EditarEstadoComponent
+      },
+      {
+        path: 'novo', component: InserirEstadoComponent
+      }
+    ],
+    canActivate: [AuthGuard],
+    data: {
+      role: "ADMIN, FUNC"
+    }
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: "ADMIN, GERENTE, FUNC"
+    }
+  },
+  ...LoginRoutes
 ];
 
 @NgModule({
