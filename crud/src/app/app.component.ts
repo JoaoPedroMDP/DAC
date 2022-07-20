@@ -17,6 +17,11 @@ export class AppComponent {
       roles: ['ADMIN', 'FUNC', 'GERENTE']
     },
     {
+      name: 'Usuarios',
+      link: '/usuarios/listar',
+      roles: ['ADMIN', 'GERENTE']
+    },
+    {
       name: 'Enderecos',
       link: '/enderecos/listar',
       roles: ['ADMIN', 'GERENTE']

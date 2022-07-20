@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <button class="close" type="button" aria-label="Fechar" (click)="activeModal.dismiss">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title" id="modalLabel">Usuário</h4>
+</div>
+
+<div class="modal-body text-center">
+    <div>
+        <p>Nome: {{usuario.nome}}</p>
+        <p>Login: {{usuario.login}}</p>
+        <p>Perfil: {{usuario.perfil}}</p>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-outline-dark" type="button" (click)="activeModal.close()">Fechar</button>
+</div>

@@ -12,9 +12,11 @@ import { InserirCidadeComponent } from './cidade/inserir-cidade/inserir-cidade.c
 import { ListarEstadoComponent } from './estado/listar-estado/listar-estado.component';
 import { EditarEstadoComponent } from './estado/editar-estado/editar-estado.component';
 import { InserirEstadoComponent } from './estado/inserir-estado/inserir-estado.component';
-import { LoginRoutes } from './auth/auth-routing.module';
 import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './home/home.component';
+
+import { UsuarioRoutes } from './usuario/usuario-routing.module';
+import { LoginRoutes } from './auth/auth-routing.module';
 
 const routes: Routes = [
   {
@@ -96,7 +98,8 @@ const routes: Routes = [
       role: "ADMIN, GERENTE, FUNC"
     }
   },
-  ...LoginRoutes
+  ...LoginRoutes,
+  ...UsuarioRoutes
 ];
 
 @NgModule({

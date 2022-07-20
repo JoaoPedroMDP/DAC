@@ -15,6 +15,7 @@
           <a ngbDropdownToggle class="nav-link" tabindex="0" id="navbarDropdown1" role="button"> Cadastros</a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown1">
             <a ngbDropdownItem class="dropdown-item" routerLink="/pessoas/novo">Pessoa</a>
+            <a ngbDropdownItem *ngIf="usuarioLogado.perfil==='ADMIN' || usuarioLogado.perfil==='GERENTE'" class="dropdown-item" routerLink="/usuarios/novo">Usuário</a>
             <a ngbDropdownItem *ngIf="usuarioLogado.perfil==='ADMIN' || usuarioLogado.perfil==='GERENTE'" class="dropdown-item" routerLink="/enderecos/novo">Endereço</a>
             <a ngbDropdownItem *ngIf="usuarioLogado.perfil==='GERENTE'" class="dropdown-item" routerLink="/cidades/novo">Cidades</a>
             <a ngbDropdownItem *ngIf="usuarioLogado.perfil==='ADMIN' || usuarioLogado.perfil==='FUNC'"class="dropdown-item" routerLink="/estados/novo">Estados</a>
